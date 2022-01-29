@@ -1,0 +1,33 @@
+{
+  "name": "freshok",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yana",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "jquery": "^3.6.0",
+    "mixitup": "^3.3.1",
+    "sass": "^1.43.4",
+    "slick-carousel": "^1.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanatoto/freshok.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanatoto/freshok/issues"
+  },
+  "homepage": "https://github.com/yanatoto/freshok#readme",
+  "description": ""
+}
