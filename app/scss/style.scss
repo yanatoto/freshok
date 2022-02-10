@@ -508,6 +508,9 @@
   }
 
   &__btn {
+    transition-property: color;
+    transition-duration: 0.3s;
+
     &:not(:last-child) {
       margin-right: 24px;
     }
@@ -544,7 +547,8 @@
     flex-direction: column;
     padding: 12px 18px;
     position: relative;
-    transition: opacity border color 0.3s;
+    transition-property: opacity, color;
+    transition-duration: 0.3s;
 
     &--new::before {
       content: "НОВИНКА";
@@ -620,7 +624,8 @@
 
   &__favorite {
     align-self: end;
-    transition: color 0.3s;
+    transition-property: fill, color;
+    transition-duration: 0.3s;
 
     &:hover path {
       fill: $yellow;
@@ -641,6 +646,8 @@
     align-items: center;
     width: calc(100% + 36px);
     margin: 0 -18px;
+    transition-property: background-color;
+    transition-duration: 0.3s;
   }
 
   &__img {
@@ -656,7 +663,8 @@
 
   &__search {
     position: relative;
-    transition: opacity 0.3s;
+    transition-property: opacity, background-color;
+    transition-duration: 0.3s;
 
     &::before {
       content: "";
@@ -772,6 +780,8 @@
   &__item {
     height: 300px;
     padding: 76px 80px 76px 32px;
+    transition-property: color, text-shadow;
+    text-decoration: 0.3s;
 
     &:hover,
     &:focus,
@@ -829,7 +839,8 @@
     line-height: 1;
     padding-bottom: 6px;
     border-bottom: solid 2px $default;
-    transition: color 0.3s;
+    transition-property: color;
+    text-decoration: 0.3s;
   }
 }
 
@@ -841,6 +852,8 @@
   }
 
   &__btn {
+    transition-property: color;
+    text-decoration: 0.3s;
     &:not(:last-child) {
       margin-right: 30px;
     }
@@ -1019,6 +1032,18 @@
     &:focus {
       box-shadow: 0px 0px 0px 4px $green-dirty;
     }
+  }
+}
+
+.brands{
+  &__items{
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding: 72px 0 72px;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
