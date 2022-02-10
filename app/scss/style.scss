@@ -356,7 +356,6 @@
     background-color: $default;
     top: 52%;
     left: 80%;
-    transition: background-color 0.3s;
   }
 
   &__arrow--left:before {
@@ -378,7 +377,6 @@
     background-color: $default;
     top: 50%;
     left: 20%;
-    transition: background-color 0.3s;
   }
 
   &__arrow--right:before {
@@ -451,7 +449,6 @@
 
     &:focus {
       box-shadow: 0px 0px 0px 4px $green-dirty;
-      border-radius: 0px 6px 6px 0px;
     }
   }
 }
@@ -504,19 +501,6 @@
 .top {
   background-color: $white;
 
-  &__title {
-    font-family: "Ruda", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 1.4;
-    padding: 70px 0 30px 0;
-    text-align: center;
-    color: $title;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
   &__filter {
     display: flex;
     justify-content: center;
@@ -524,13 +508,6 @@
   }
 
   &__btn {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.4;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-
     &:not(:last-child) {
       margin-right: 24px;
     }
@@ -542,12 +519,13 @@
       box-shadow: 0px 0px 0px 3px $green-dirty;
       border-radius: 3px;
     }
+    &:active {
+      box-shadow: 0px 3px 0px 0px $green-dirty;
+    }
   }
-
-  .mixitup-control-active:active {
+  .mixitup-control-active {
     box-shadow: 0px 3px 0px 0px $green-dirty;
   }
-
   &__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -559,15 +537,14 @@
   &__item {
     max-width: 300px;
     width: 100%;
-    max-height: 409px;
-    height: 100%;
-    border: 1px solid $grey;
+    height: 409px;
+    border: 1px solid $grey-border;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     padding: 12px 18px;
     position: relative;
-    transition: opacity 0.3s;
+    transition: opacity border color 0.3s;
 
     &--new::before {
       content: "НОВИНКА";
@@ -766,7 +743,7 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
-    transition: background-color 0.3s;
+    transition: background-color box-shadow 0.3s;
 
     &:hover {
       background-color: $box-shadow;
@@ -789,7 +766,7 @@
     width: 300px;
     display: grid;
     grid-template-columns: 630px 300px 300px;
-    gap: 30px;
+    grid-gap: 30px;
   }
 
   &__item {
@@ -798,8 +775,7 @@
 
     &:hover,
     &:focus,
-    &:active,
-    {
+    &:active {
       .banners__text,
       .banners__title,
       .banners__link {
@@ -854,6 +830,195 @@
     padding-bottom: 6px;
     border-bottom: solid 2px $default;
     transition: color 0.3s;
+  }
+}
+
+.promo {
+  &__filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  &__btn {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+    &:hover {
+      color: $green;
+    }
+    &:focus {
+      color: $default;
+      box-shadow: 0px 0px 0px 3px $green-dirty;
+      border-radius: 3px;
+    }
+    &:active {
+      box-shadow: 0px 3px 0px 0px $green-dirty;
+    }
+  }
+  .mixitup-control-active {
+    box-shadow: 0px 3px 0px 0px $green-dirty;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding-bottom: 48px;
+  }
+
+  &__card {
+    max-width: 300px;
+    width: 100%;
+    max-height: 124px;
+    height: 100%;
+    border: 1px solid $grey-border;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: $white;
+    padding: 12px;
+    transition: border 0.3s;
+
+    &--new::before {
+      content: "НОВИНКА";
+      position: absolute;
+      color: $white;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      background-color: $green;
+      padding: 3px 6px;
+      border-radius: 6px;
+      top: 12px;
+      left: 12px;
+    }
+
+    &--hit::before {
+      content: "ХИТ";
+      position: absolute;
+      color: $white;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      background-color: $orange;
+      padding: 3px 6px;
+      border-radius: 6px;
+      top: 12px;
+      left: 12px;
+    }
+    &:hover {
+      border: 1px solid $green;
+    }
+  }
+
+  &__left {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 600;
+    max-width: 164px;
+    width: 100%;
+  }
+  &__titel {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: $title;
+    height: 58px;
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1;
+    color: $green;
+    padding-bottom: 5px;
+    &--close {
+      color: $red;
+    }
+    &--ended {
+      color: $grey-border;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 140px;
+  }
+  &__newPrice {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  &__oldPrice {
+    color: $grey;
+    position: relative;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+
+    &::before {
+      border-bottom: 1px solid $grey;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 50%;
+      transform: rotate(-10deg);
+    }
+  }
+  &__star {
+    line-height: 1;
+    font-weight: 700;
+    position: relative;
+    &::after {
+      position: absolute;
+      background-image: url("../images/promo/star.svg");
+      content: "";
+      width: 16px;
+      height: 16px;
+      top: -2px;
+      left: 25px;
+    }
+  }
+
+  &__add {
+    position: relative;
+    background-color: $green;
+    margin: 48px 0 72px;
+    border-radius: 6px;
+    padding: 12px 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: $white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $green-hover;
+    }
+
+    &:active {
+      background-color: $green;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: $grey-light;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px $green-dirty;
+    }
   }
 }
 
