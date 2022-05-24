@@ -116,3 +116,21 @@
     margin-right: 24px;
   }
 }
+
+
+.social {
+  display: flex;
+  color: $white;
+
+  &__item {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

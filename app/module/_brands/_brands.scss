@@ -1,0 +1,24 @@
+
+.brands {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: $white;
+
+  &__items {
+    display: flex;
+    padding: 72px 0 72px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

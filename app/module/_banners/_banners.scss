@@ -1,0 +1,72 @@
+
+.banners {
+  background-color: $white;
+  padding-bottom: 72px;
+
+  &__items {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 630px 300px 300px;
+    grid-gap: 30px;
+  }
+
+  &__item {
+    height: 300px;
+    padding: 76px 80px 76px 32px;
+    border-radius: 4px;
+    color: $default;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &--lg {
+      color: $white;
+      text-shadow: 1px 1px 0px $grey-shadow;
+      padding-right: 100px;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-bottom: 18px;
+
+    &--lg {
+      color: $white;
+      text-shadow: 1px 1px 0px $grey-shadow;
+    }
+  }
+
+  &__title {
+    font-family: "Ruda-SemiBold", sans-serif;
+    font-size: 30px;
+    line-height: 1.4;
+    color: $default;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+
+    &--lg {
+      color: $white;
+      text-shadow: 1px 1px 0px $grey-shadow;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    color: $default;
+    border-color: $default;
+    border-bottom: solid 2px $default;
+
+    &--lg {
+      color: $white;
+      text-shadow: 1px 1px 0px $grey-shadow;
+      border-bottom: solid 2px $white;
+    }
+  }
+}

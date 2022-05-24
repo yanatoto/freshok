@@ -1,0 +1,231 @@
+
+
+.promo {
+  background-color: $bg-default;
+  padding: 72px 0;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  &__btn {
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    &:hover {
+      color: $green;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 3px $green-dirty;
+      border-radius: 3px;
+    }
+
+    &:active,
+    &--active {
+      &::before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: calc(100% - 12px);
+        background-color: $green-dirty;
+        top: 23px;
+        left: 6px;
+      }
+    }
+  }
+
+  .mixitup-control-active {
+    .top__btn {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: calc(100% - 12px);
+        background-color: $green-dirty;
+        top: 23px;
+        left: 6px;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding-bottom: 48px;
+  }
+
+  &__link {
+    max-width: 300px;
+    width: 100%;
+    max-height: 124px;
+    height: 100%;
+    border: 1px solid $grey-border;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: $white;
+    padding: 12px;
+    transition: border 0.3s;
+
+    &--new::before {
+      content: "НОВИНКА";
+      position: absolute;
+      color: $white;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      background-color: $green;
+      padding: 3px 6px;
+      border-radius: 6px;
+      top: 12px;
+      left: 12px;
+    }
+
+    &--hit::before {
+      content: "ХИТ";
+      position: absolute;
+      color: $white;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      background-color: $orange;
+      padding: 3px 6px;
+      border-radius: 6px;
+      top: 12px;
+      left: 12px;
+    }
+
+    &:hover {
+      border: 1px solid $green;
+    }
+  }
+
+  &__img {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 600;
+    max-width: 164px;
+    width: 100%;
+  }
+
+  &__text {
+    font-weight: 600;
+    line-height: 1.4;
+    max-height: 60px;
+    height: 100%;
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1;
+    color: $green;
+    padding-bottom: 5px;
+
+    &--close {
+      color: $red;
+    }
+
+    &--ended {
+      color: $grey-border;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 140px;
+  }
+
+  &__newPrice {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  &__oldPrice {
+    color: $grey;
+    position: relative;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+
+    &::before {
+      content: "";
+      border-bottom: 1px solid $grey;
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      transform: rotate(-10deg);
+    }
+  }
+
+  &__star {
+    line-height: 1;
+    font-weight: 700;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      background-image: url("../images/promo/star.svg");
+      content: "";
+      width: 16px;
+      height: 16px;
+      top: -2px;
+      left: 25px;
+    }
+  }
+
+  &__add {
+    position: relative;
+    background-color: $green;
+    border-radius: 6px;
+    padding: 12px 30px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: $white;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $green-hover;
+    }
+
+    &:active {
+      background-color: $green;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: $grey-light;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px $green-dirty;
+    }
+  }
+}
